@@ -9,17 +9,18 @@ class Node{
     }
 }
 class Solution{
-    //this was a challenge! LevelOrder
-	public static void levelOrder(Node root) {
-        Queue<Node> queue = new LinkedList<>(); //i ended up making a queue based on the outline provided from HR
-        queue.add(root);
+    //this was a challenge! LevelOrder 
+	public static void levelOrderNonRecersive(Node root) {
+        //you must make the linkedList a queue type and able to take the class 'Node'
+        Queue<Node> q = new LinkedList<>(); //i ended up making the method queue based on the outline provided from HR
+        q.add(root); //add the root node to the queue which will then add it left and right nodes in the while statment
 
-        while (!queue.isEmpty()) { //same as checking if the root is null
-            Node curr = queue.remove();
-            System.out.println(curr.data);
+        while (!q.isEmpty()) { //same as checking if the root contents != null
+            Node currentNode = q.remove();
+            System.out.println(currentNode.data); //print each number on a new line in the order 
 
-            if (curr.left != null) queue.add(curr.left);
-            if (curr.right != null) queue.add(curr.right);
+            if (currentNode.left != null) q.add(currentNode.left);
+            if (currentNode.right != null) q.add(currentNode.right);
         }
     }
     //this is for practice, im am going to be trying the other types of traversals i try levelorder
@@ -92,7 +93,7 @@ class Solution{
             }
 
             reverseOrderTraversal(root);
-            // levelOrder(root);
+            // levelOrderNonRecersive(root);
             sc.close();
     }	
 }
