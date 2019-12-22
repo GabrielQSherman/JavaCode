@@ -9,19 +9,23 @@ class Node{
     }
 }
 class Solution{
+    //this was a challenge! LevelOrder
+	public static void levelOrder(Node root) {
+        Queue<Node> queue = new LinkedList<>(); //i ended up making a queue based on the outline provided from HR
+        queue.add(root);
 
-	static void levelOrder(Node root){
-      //Write your code here
+        while (!queue.isEmpty()) { //same as checking if the root is null
+            Node curr = queue.remove();
+            System.out.println(curr.data);
 
-      //if node root is not == null than go into
-      
+            if (curr.left != null) queue.add(curr.left);
+            if (curr.right != null) queue.add(curr.right);
+        }
     }
-
     //this is for practice, im am going to be trying the other types of traversals i try levelorder
 
     //for in order traversal
     public static void inOrderTraversal(Node root) {
-
         if (root != null) { // this will make sure that we are not accessing a dead-end
 
             inOrderTraversal(root.left); //because the left side is always acessed first. the left-most node is accessed first, then its parent, then the right, then the grandparent..and so on..
@@ -30,7 +34,6 @@ class Solution{
 
             inOrderTraversal(root.right);
         }
-
     } 
     //for decending order
     public static void reverseOrderTraversal(Node root) {
