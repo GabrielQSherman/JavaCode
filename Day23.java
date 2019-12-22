@@ -20,30 +20,46 @@ class Solution{
     //this is for practice, im am going to be trying the other types of traversals i try levelorder
 
     //for in order traversal
-    public static void inorder(Node root) {
+    public static void inOrderTraversal(Node root) {
 
         if (root != null) { // this will make sure that we are not accessing a dead-end
 
-            inorder(root.left); //because the left side is always acessed first. the left-most node is accessed first, then its parent, then the right, then the grandparent..and so on..
+            inOrderTraversal(root.left); //because the left side is always acessed first. the left-most node is accessed first, then its parent, then the right, then the grandparent..and so on..
             
             System.out.println(root.data);
 
-            inorder(root.right);
+            inOrderTraversal(root.right);
         }
 
     } 
     //for decending order
-    public static void decendingORD(Node root) {
+    public static void reverseOrderTraversal(Node root) {
 
         if (root != null) {
-             inorder(root.right);
+            reverseOrderTraversal(root.right);
             
              System.out.println(root.data);
 
-            inorder(root.left);
+             reverseOrderTraversal(root.left);
            
         }
 
+    }
+    //preorder traversal
+    public static void preorderTraversal(Node root) {
+        if(root != null) {
+            System.out.println(root.data);
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+        }
+    }
+    //postodertraversal
+    public static void postorderTraversal(Node root) {
+        if(root != null) {
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+            System.out.println(root.data);
+        }
     }
 
 	public static Node insert(Node root,int data){
@@ -72,7 +88,8 @@ class Solution{
                 root=insert(root,data);
             }
 
-            decendingORD(root);
+            reverseOrderTraversal(root);
             // levelOrder(root);
+            sc.close();
     }	
 }
