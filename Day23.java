@@ -19,18 +19,32 @@ class Solution{
 
     //this is for practice, im am going to be trying the other types of traversals i try levelorder
 
+    //for in order traversal
     public static void inorder(Node root) {
 
-        if (Node root != null) {
+        if (root != null) { // this will make sure that we are not accessing a dead-end
 
-            inorder(Node root);
+            inorder(root.left); //because the left side is always acessed first. the left-most node is accessed first, then its parent, then the right, then the grandparent..and so on..
             
-            System.out.println(Node root);
+            System.out.println(root.data);
 
-            inorder(Node root);
+            inorder(root.right);
         }
 
     } 
+    //for decending order
+    public static void decendingORD(Node root) {
+
+        if (root != null) {
+             inorder(root.right);
+            
+             System.out.println(root.data);
+
+            inorder(root.left);
+           
+        }
+
+    }
 
 	public static Node insert(Node root,int data){
         if(root==null){
@@ -58,7 +72,7 @@ class Solution{
                 root=insert(root,data);
             }
 
-            inorder(root);
+            decendingORD(root);
             // levelOrder(root);
-        }	
+    }	
 }
