@@ -14,16 +14,29 @@ class Solution
 
     public static Node removeDuplicates(Node head) {
 
-        Node curr = head;
-        while (curr != null && curr.next != null) {
-            while (curr.next != null && curr.data == curr.next.data) {
-                curr.next = curr.next.next;
+        Node currentNode = head;
+        while (currentNode != null && currentNode.next != null) {
+            while (currentNode.next != null && currentNode.data == currentNode.next.data) {
+                currentNode.next = currentNode.next.next;
             }
-            curr = curr.next;
+            currentNode = currentNode.next;
         }
         return head;
         
 
+    }
+
+    public static Node removeDuplicatesRecersive(Node head) {
+
+       if (head != null) {
+           if (head.data == head.next.data) {
+               return removeDuplicatesRecersive(head.next.next);
+           } else {
+               return removeDuplicatesRecersive(head.next);
+           }
+       }
+
+       return head;
     }
 
     public static  Node insert(Node head,int data)
