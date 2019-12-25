@@ -76,7 +76,7 @@ class Solution
               }
               head=removeDuplicates(head);
               display(head);
-              sc.close()
+              sc.close();
 
        }
     }
