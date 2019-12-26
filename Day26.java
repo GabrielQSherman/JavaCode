@@ -11,6 +11,10 @@ public class Solution {
 
        Scanner scan = new Scanner(Systen.in);
 
+       List<Integer> returnedDate = new ArrayList<Integer>();
+
+       List<Integer> lateDate = new ArrayList<Integer>();
+
         
 
        scan.close();
