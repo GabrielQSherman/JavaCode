@@ -12,8 +12,14 @@ public class Solution {
        Scanner scan = new Scanner(Systen.in);
 
        List<Integer> returnedDate = new ArrayList<Integer>();
+       for (int i = 0; i < 3; i++) {
+        returnedDate.add(scan.nextInt());
+       }
 
        List<Integer> lateDate = new ArrayList<Integer>();
+       for (int i = 0; i < 3; i++) {
+        lateDate.add(scan.nextInt());
+       }
 
         
 
