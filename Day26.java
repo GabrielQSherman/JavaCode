@@ -33,16 +33,23 @@ public class Solution {
        if (years > 0){
            System.out.println("10000");
            return;
-       } else if (months > 0) {
-            System.out.println(months * 500);
-            return;
-        } else if (days > 0) {
-            System.out.println(days * 15);
-            return;
-        } else {
-            System.out.println("0");
-            return;
-        }
+       } else if (years < 0) {
+           System.out.println("0");
+           return;
+       } else {
+           if (months > 0) {
+               System.out.println(months * 500);
+               return;
+           } else if (days > 0) {
+               System.out.println(days * 15);
+               return;
+           } else {
+               System.out.println("0");
+               return;
+           }
+       }
+
     }
+    
 }
 
